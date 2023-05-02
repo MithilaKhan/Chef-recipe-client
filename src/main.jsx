@@ -11,12 +11,14 @@ import Home from './Home/Home.jsx';
 import Navbar from './Shared/Navbar.jsx';
 import Register from './Register/Register.jsx';
 import Login from './Login/Login.jsx';
+import ErrorPage from './Components/Error-Page.jsx';
+import Blog from './Pages/Blog.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    // errorElement: <ErrorPage />,
+    errorElement: <ErrorPage/>,
     children: [
       {
         path: "/",
@@ -33,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
       },
     ],
   },

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import ActiveLink from '../Components/ActiveLink/ActiveLink';
 
 const Navbar = () => {
    console.log('environment variable',import.meta.env.VITE_apiKey);
@@ -11,10 +12,10 @@ const Navbar = () => {
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
       <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-        <li><Link className=' font-semibold text-pink-500' to="/">Home </Link ></li>
-        <li><Link className=' font-semibold text-pink-500' to="/blog">Blog</Link ></li>
-        <li><Link className=' font-semibold text-pink-500'>Gallery</Link ></li>
-        <li><Link className=' font-semibold text-pink-500'>Contact Us</Link ></li>
+        <li><ActiveLink className=' font-semibold text-pink-500' to="/">Home </ActiveLink ></li>
+        <li><ActiveLink className=' font-semibold text-pink-500' to="/blog">Blog</ActiveLink ></li>
+        <li><ActiveLink className=' font-semibold text-pink-500' to="/gallery">Gallery</ActiveLink ></li>
+        <li><ActiveLink className=' font-semibold text-pink-500' to="/contact">Contact Us</ActiveLink ></li>
          
       </ul>
     </div>
@@ -22,10 +23,10 @@ const Navbar = () => {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 items-center">
-      <li><Link className='lg:pe-14 font-semibold text-pink-500' to="/">Home </Link></li>
-      <li><Link className='lg:pe-14 font-semibold text-pink-500' to="/blog">Blog</Link></li>
-      <li><Link className='lg:pe-14 font-semibold text-pink-500' >Gallery</Link></li>
-      <li><Link className='font-semibold text-pink-500'>Contact Us</Link></li>
+      <p className='lg:pe-14 font-semibold text-pink-500'><ActiveLink  to="/">Home </ActiveLink></p>
+      <p className='lg:pe-14 font-semibold text-pink-500'><ActiveLink  to="/blog">Blog</ActiveLink></p>
+      <p className='lg:pe-14 font-semibold text-pink-500'><ActiveLink  to="/gallery" >Gallery</ActiveLink></p>
+      <p className='font-semibold text-pink-500'><ActiveLink  to="/contact">Contact Us</ActiveLink></p>
       
     </ul>
   </div>
