@@ -16,7 +16,7 @@ const Chef = ({chef}) => {
     <p className='text-pink-600'><span className='text-purple-500 font-medium'>Number of recipes :</span>  {number_of_recipes}</p>
     <p className='text-pink-600 '><span className='text-purple-500 font-medium'>likes : </span> {likes}  </p>
     <div className="card-actions">
-    <Link to="/login"><button className='btn bg-gradient-to-br from-pink-600  to-purple-600 border-0 ps-8 pe-8'>View Recipes</button></Link>
+    <Link to="/viewRecipes"><button className='btn bg-gradient-to-br from-pink-600  to-purple-600 border-0 ps-8 pe-8'>View Recipes</button></Link>
     </div>
   </div>
 </div>

@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import ActiveLink from '../Components/ActiveLink/ActiveLink';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Navbar = () => {
    console.log('environment variable',import.meta.env.VITE_apiKey);
+
+   const{user} =useContext(AuthContext)
+   console.log(user)
    return (
       <div className="navbar bg-gray-100  lg:items-center ">
   <div className="navbar-start lg:ms-20 lg:mt-5 ">
