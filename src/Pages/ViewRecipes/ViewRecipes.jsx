@@ -3,15 +3,15 @@ import { useLoaderData } from 'react-router-dom';
 import "./ViewRecipes.css"
 const ViewRecipes = () => {
    const recipes = useLoaderData();
-   const [viewRecipes , setViewRecipes] =useState
+   // const [viewRecipes , setViewRecipes] =useState
    console.log(recipes)
    return (
       <div>
          {/* view Recipes Banner  */}
-         <div className=''>
-            {
+         <div className='ViewRecipeBanner'>
+            {/* {
                recipes.find((id))
-            }
+            } */}
          </div>
       </div>
    );

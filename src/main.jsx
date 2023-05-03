@@ -44,9 +44,9 @@ const router = createBrowserRouter([
         element: <Blog />,
       },
       {
-        path: "/viewRecipes" ,
+        path: "/viewRecipes/:id" ,
         element: <ViewRecipes/> ,
-        loader:() => fetch("https://chef-recipe-hunter-server-side-mithilakhan.vercel.app/chef")
+        loader:({params}) => fetch(`https://chef-recipe-hunter-server-side-mithilakhan.vercel.app/chef/${params.id}`)
       }
     ],
   },

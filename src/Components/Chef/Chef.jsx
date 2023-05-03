@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 const Chef = ({chef}) => {
-   const { chef_picture ,chef_name, years_of_experience ,number_of_recipes ,likes} =chef
+   const { chef_picture ,chef_name,id, years_of_experience ,number_of_recipes ,likes} =chef
    return (
       <div>
          <div className="card w-96 bg-base-100 shadow-xl">
@@ -16,7 +16,7 @@ const Chef = ({chef}) => {
     <p className='text-pink-600'><span className='text-purple-500 font-medium'>Number of recipes :</span>  {number_of_recipes}</p>
     <p className='text-pink-600 '><span className='text-purple-500 font-medium'>likes : </span> {likes}  </p>
     <div className="card-actions">
-    <Link to="/viewRecipes"><button className='btn bg-gradient-to-br from-pink-600  to-purple-600 border-0 ps-8 pe-8'>View Recipes</button></Link>
+    <Link to={`/viewRecipes/${id}`}><button className='btn bg-gradient-to-br from-pink-600  to-purple-600 border-0 ps-8 pe-8'>View Recipes</button></Link>
     </div>
   </div>
 </div>
