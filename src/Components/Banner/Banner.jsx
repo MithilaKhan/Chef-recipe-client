@@ -5,9 +5,10 @@ const Banner = () => {
       <div className='bannerBgImg grid lg:grid-cols-2 sm:grid-cols-1'>
 
          {/* title */}
-         <div className='grid  gap-y-4'>
-         <h1 className='text-5xl text-center  my-auto font-bold text-pink-600'>Fresh <br className='pb-4' />
-         <span className='banner-title text-purple-700 '>Healthy & Traditional</span> <br /> Bengali Food</h1>
+         <div className='grid text-5xl text-center my-auto gap-y-4'>
+         <h1 className='   font-bold text-pink-600'>Fresh </h1>
+         <p className=' text-purple-700  pt-6   font-bold'>Healthy & Traditional</p>
+         <p className= "font-bold pt-6 text-pink-600">Bengali Food</p> 
          </div>
 
 

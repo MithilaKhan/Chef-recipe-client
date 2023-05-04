@@ -1,5 +1,5 @@
 import React, {  createContext, useEffect, useState } from 'react';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import app from '../Firebase/firebase.config';
 
 
@@ -28,6 +28,14 @@ const logOut = () =>{
    return signOut(auth)
 }
 
+// update profile photo url and name 
+const updateProfilePhotoAndName = (user , name , photo) =>{
+   setLoading(true)
+   return updateProfile(user, {
+     displayName: name, photoURL: photo
+   })
+}
+
 
 //  observer auth state 
 useEffect(()=>{
@@ -44,7 +52,8 @@ useEffect(()=>{
       register ,
       login ,
       logOut ,
-      loading
+      loading ,
+      updateProfilePhotoAndName
    }
    return (
       <AuthContext.Provider value={AuthInfo}>

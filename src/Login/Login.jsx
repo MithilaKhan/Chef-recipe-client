@@ -13,11 +13,13 @@ import app from "../Firebase/firebase.config.js";
 const Login = () => {
   const auth = getAuth(app);
   const navigate = useNavigate();
+
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
   
   const { login } = useContext(AuthContext);
   const [error, setError] = useState("");
+  
   const location = useLocation();
   console.log(location);
   const from = location.state?.from?.pathname || "/";

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider.jsx';
 
 const Register = () => {
-const {register} = useContext(AuthContext)
+const {register , updateProfilePhotoAndName } = useContext(AuthContext)
 const [error , setError] = useState("")
 
   const handleRegister =(event)=>{
@@ -18,12 +18,13 @@ const [error , setError] = useState("")
     if(password.length < 6){
       setError("password should be 6 character")
       return;
-    }
+    } 
 // register auth 
     register(email , password)
     .then(result =>{
       const loggedUser = result.user
       console.log(loggedUser)
+      updatePhotoName(loggedUser,name,photo)
       form.reset()
     })
     .catch((error) =>{
@@ -31,6 +32,20 @@ const [error , setError] = useState("")
       console.log(errorMessage)
       setError(errorMessage)
     })
+    // update profile photo url and name 
+    const updatePhotoName = (currentUser, name, photo) =>{
+      updateProfilePhotoAndName(currentUser,name ,photo)
+      .then(result =>{
+        const loggedUser = result.user
+        console.log(loggedUser)
+       
+      })
+      .catch((error) =>{
+        console.log(error.message)
+        setError(error.message)
+      })
+
+    }
 
   } 
    return (

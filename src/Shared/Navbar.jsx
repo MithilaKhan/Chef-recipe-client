@@ -8,7 +8,7 @@ const Navbar = () => {
 
    const{user , logOut} =useContext(AuthContext)
    const [showName ,setShowName] = useState(false)
-   console.log(user)
+  //  console.log(user)
 
 
 //  signOut 
