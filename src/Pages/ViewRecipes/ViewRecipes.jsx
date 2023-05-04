@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import "./ViewRecipes.css"
 import RecipeCard from '../../Components/RecipeCard/RecipeCard';
+import { ToastContainer } from 'react-toastify';
 const ViewRecipes = () => {
    const recipe = useLoaderData();
    const {chef_name ,id , chef_picture ,description,likes ,years_of_experience,recipes ,number_of_recipes} = recipe
@@ -27,6 +28,7 @@ const ViewRecipes = () => {
 
 <div>
 <h1 className='text-center mt-20 font-bold italic text-3xl text-pink-600'>The Delicious Recipe by {chef_name}</h1>
+<ToastContainer/>
 </div>
 <div className='grid lg:grid-cols-3 sm:grid-cols-1 g-3 mt-10'>
 {

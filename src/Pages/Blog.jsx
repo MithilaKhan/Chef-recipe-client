@@ -1,8 +1,17 @@
 import React from 'react';
+import ReactDOM from "react-dom";
+import Pdf from "react-to-pdf";
 
+const ref = React.createRef();
 const Blog = () => {
    return (
-      <div className='grid lg:grid-cols-2 sm:grid-cols-1 p-24'>
+
+      <div>
+         <Pdf targetRef={ref} filename="Blog.pdf">
+        {({ toPdf }) => <button onClick={toPdf} className='bg-pink-500 p-4 rounded-lg'>Generate Pdf</button>}
+      </Pdf>
+
+<div className='grid lg:grid-cols-2 sm:grid-cols-1 p-24' ref={ref}>
          <div className='grid grid-cols-1'>
 <h1  className='mb-6'>
    <p className='text-purple-500 font-semibold text-2xl'><span className='text-pink-700 '>Q.</span>What is  the difference between  uncontrolled  and controlled components ??</p>
@@ -33,6 +42,8 @@ const Blog = () => {
 <img src="https://img.freepik.com/free-vector/flat-people-asking-questions_23-2148919346.jpg?w=740&t=st=1683077353~exp=1683077953~hmac=c4c523972ab8fad2fc65af245bc58a41537dfecb0c303cfcc6775c083396189d" alt="" />
          </div>
       </div>
+      </div>
+      
    );
 };
 
