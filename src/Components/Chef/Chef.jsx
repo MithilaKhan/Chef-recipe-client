@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 
 
 const Chef = ({chef}) => {
@@ -7,8 +9,13 @@ const Chef = ({chef}) => {
    return (
       <div>
          <div className="card w-96 bg-base-100 shadow-xl">
-  <figure className="px-10 pt-10">
-    <img src={chef_picture} alt="Shoes" className="rounded-xl w-60 h-52" />
+  <figure className="px-10 pt-10" src="iframe" loading="lazy">
+    <img src={chef_picture} alt="Image Alt" loading="lazy" className="rounded-xl w-60 h-52" />
+    
+    {/* <LazyLoadImage
+    alt={chef_picture.alt}
+    effect="blur"
+    src={chef_picture.src} /> */}
   </figure>
   <div className="card-body ">
   <h2 className="card-title text-pink-600 ps-5 text-3xl justify-items-center  text-center font-semibold">{chef_name}</h2>
