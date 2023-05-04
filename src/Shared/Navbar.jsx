@@ -23,7 +23,7 @@ const handleLogOut =() =>{
   
 
    return (
-      <div className="navbar bg-gray-100  lg:items-center ">
+      <div className="navbar bg-gray-100   ">
   <div className="navbar-start lg:ms-20 lg:mt-5 ">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">

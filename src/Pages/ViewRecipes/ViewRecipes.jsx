@@ -13,11 +13,11 @@ const ViewRecipes = () => {
          {/* view Recipes Banner  */}
          <div className='ViewRecipeBanner grid lg:grid-cols-2 sm:grid-cols-1'>
 <div className='grid grid-cols-1 my-auto '>
-<h1 className='text-center font-bold text-3xl text-purple-600'>{chef_name}</h1>
-<p className='text-pink-800 p-4 text-xl'>{description}</p>
-<p className='text-pink-800 p-4 text-xl'> <span className='font-semibold text-purple-600'>Experience :</span> {years_of_experience}</p>
-<p className='text-pink-800 p-4 text-xl'> <span className='font-semibold text-purple-600'>Number of Recipes :</span> {number_of_recipes}</p>
-<p className='text-pink-800 p-4 text-xl'> <span className='font-semibold text-purple-600'>Likes :</span> {likes}</p>
+<h1 className='text-center font-bold text-3xl p-3 text-purple-600'>{chef_name}</h1>
+<p className='text-pink-800 ps-4 text-xl'>{description}</p>
+<p className='text-pink-800 ps-4 pt-2 text-xl'> <span className='font-semibold text-purple-600'>Experience :</span> {years_of_experience}</p>
+<p className='text-pink-800 ps-4 pt-2 text-xl'> <span className='font-semibold text-purple-600'>Number of Recipes :</span> {number_of_recipes}</p>
+<p className='text-pink-800 ps-4 pt-2 text-xl'> <span className='font-semibold text-purple-600'>Likes :</span> {likes}</p>
 </div>
 
 <div className='lg:p-20 justify-items-center '>

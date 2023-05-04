@@ -2,7 +2,7 @@ import React from 'react';
 
 const FoodItems = () => {
    return (
-      <div className='grid lg:grid-cols-3 sm:grid-cols-2 justify-items-center mb-16'>
+      <div className='grid lg:grid-cols-3 sm:grid-cols-2 justify-items-center '>
          <div className="card w-96 bg-base-100 shadow-xl mb-16">
   <div className="card-body">
     <h2 className="card-title text-purple-600 ps-5 text-3xl  text-center font-semibold">Vaja Mach</h2>

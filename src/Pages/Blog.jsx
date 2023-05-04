@@ -7,10 +7,8 @@ const Blog = () => {
    return (
 
       <div>
-         <Pdf targetRef={ref} filename="Blog.pdf">
-        {({ toPdf }) => <button onClick={toPdf} className='bg-pink-500 p-4 rounded-lg'>Generate Pdf</button>}
-      </Pdf>
-
+         
+  <div className='font-bold text-4xl text-center pt-10 text-pink-600'>Questions & Answers </div>
 <div className='grid lg:grid-cols-2 sm:grid-cols-1 p-24' ref={ref}>
          <div className='grid grid-cols-1'>
 <h1  className='mb-6'>
@@ -32,7 +30,7 @@ const Blog = () => {
 </h1>
 
 
-<h1  className='mb-6'>
+<h1  className=''>
    <p className='text-purple-500 font-semibold text-2xl'><span className='text-pink-700 '>Q.</span>What is a Custom hook and why will we create a custom hook ??</p>
    <p className='text-pink-500'><span className='text-purple-700 font-semibold text-xl'>Ans.</span>custom hook is a JavaScript function that starts with the prefix "use" and allows you to reuse stateful logic between components.Custom hooks are a powerful tool in React that can help you create more reusable and maintainable code.</p>
 </h1>
@@ -42,6 +40,12 @@ const Blog = () => {
 <img src="https://img.freepik.com/free-vector/flat-people-asking-questions_23-2148919346.jpg?w=740&t=st=1683077353~exp=1683077953~hmac=c4c523972ab8fad2fc65af245bc58a41537dfecb0c303cfcc6775c083396189d" alt="" />
          </div>
       </div>
+      <div className='text-center lg:mb-12'>
+      <Pdf targetRef={ref} filename="Blog.pdf">
+        {({ toPdf }) => <button onClick={toPdf} className='bg-pink-500 p-4 text-center rounded-lg'>Generate Pdf</button>}
+      </Pdf>
+      </div>
+      
       </div>
       
    );

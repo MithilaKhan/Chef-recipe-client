@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider.jsx';
 
 const Register = () => {
-const {register , updateProfilePhotoAndName } = useContext(AuthContext)
+const {register , updateProfilePhotoAndName ,user } = useContext(AuthContext)
 const [error , setError] = useState("")
 
   const handleRegister =(event)=>{
@@ -36,7 +36,7 @@ const [error , setError] = useState("")
     const updatePhotoName = (currentUser, name, photo) =>{
       updateProfilePhotoAndName(currentUser,name ,photo)
       .then(result =>{
-        const loggedUser = result.user
+        const loggedUser = result
         console.log(loggedUser)
        
       })
