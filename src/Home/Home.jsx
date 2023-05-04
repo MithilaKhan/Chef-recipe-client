@@ -28,8 +28,8 @@ const Home = () => {
           <FoodItems/>
 
           <div className='text-center pt-16 pb-14'>
-          <p className='italic  text-purple-500 text-xl'>Our Delicious & </p>
-         <h1 className='text-pink-500 text-4xl  font-bold'>Chefs</h1>
+          <p className='italic  text-purple-500 text-xl'>Our talented  </p>
+         <h1 className='text-pink-500 text-4xl  font-bold'>Master Chef's</h1>
           </div>
           <div className='grid lg:grid-cols-3 sm:grid-cols-1 gap-6 justify-items-center'>
             {

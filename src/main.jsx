@@ -15,6 +15,7 @@ import ErrorPage from './Components/Error-Page.jsx';
 import Blog from './Pages/Blog.jsx';
 import ViewRecipes from './Pages/ViewRecipes/ViewRecipes.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
+import PrivateRoute from './PrivateRoute/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/viewRecipes/:id" ,
-        element: <ViewRecipes/> ,
+        element: <PrivateRoute> <ViewRecipes/> </PrivateRoute> ,
         loader:({params}) => fetch(`https://chef-recipe-hunter-server-side-mithilakhan.vercel.app/chef/${params.id}`)
       }
     ],

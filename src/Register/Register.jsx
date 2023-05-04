@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../Components/Button.jsx';
 import { AuthContext } from '../Provider/AuthProvider.jsx';
 
 const Register = () => {
 const {register} = useContext(AuthContext)
+const [error , setError] = useState("")
 
   const handleRegister =(event)=>{
     event.preventDefault()
@@ -15,14 +16,20 @@ const {register} = useContext(AuthContext)
     const password = form.password.value 
     console.log(email ,photo , name ,password)
 
+    if(password.length < 6){
+      setError("password should be 6 character")
+    }
+// register auth 
     register(email , password)
     .then(result =>{
       const loggedUser = result.user
       console.log(loggedUser)
+      form.reset('')
     })
     .catch((error) =>{
       const errorMessage = error.message;
       console.log(errorMessage)
+      setError(errorMessage)
     })
 
   } 
@@ -69,6 +76,7 @@ const {register} = useContext(AuthContext)
         <div className="form-control mt-6">
           <button className="btn  bg-pink-400 border-0 hover:bg-purple-600 ">Create an Account</button>
         </div>
+        <p className='text-red-500'>{error}</p>
         <p>Already have an account ? <Link to="/login" className='text-purple-400'>Login</Link></p>
       </form>
     </div>
