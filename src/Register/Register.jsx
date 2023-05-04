@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Button from '../Components/Button.jsx';
 import { AuthContext } from '../Provider/AuthProvider.jsx';
 
 const Register = () => {
@@ -18,13 +17,14 @@ const [error , setError] = useState("")
 
     if(password.length < 6){
       setError("password should be 6 character")
+      return;
     }
 // register auth 
     register(email , password)
     .then(result =>{
       const loggedUser = result.user
       console.log(loggedUser)
-      form.reset('')
+      form.reset()
     })
     .catch((error) =>{
       const errorMessage = error.message;
@@ -82,7 +82,7 @@ const [error , setError] = useState("")
     </div>
   </div>
       </div>
-      <Button/>
+      
      
 </div>
    );

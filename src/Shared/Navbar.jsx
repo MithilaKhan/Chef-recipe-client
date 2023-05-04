@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import ActiveLink from '../Components/ActiveLink/ActiveLink';
 import { AuthContext } from '../Provider/AuthProvider';
@@ -7,6 +7,7 @@ const Navbar = () => {
    console.log('environment variable',import.meta.env.VITE_apiKey);
 
    const{user , logOut} =useContext(AuthContext)
+   const [showName ,setShowName] = useState(false)
    console.log(user)
 
 
@@ -33,9 +34,34 @@ const handleLogOut =() =>{
         <li><ActiveLink className=' font-semibold text-pink-500' to="/blog">Blog</ActiveLink ></li>
         <li><ActiveLink className=' font-semibold text-pink-500' to="/gallery">Gallery</ActiveLink ></li>
         <li><ActiveLink className=' font-semibold text-pink-500' to="/contact">Contact Us</ActiveLink ></li>
-        {
-        user?<button onClick={handleLogOut} className='btn bg-pink-600  border-0 ps-8 pe-8'>Logout</button> :<Link to="/login"><button className='btn bg-purple-600 border-0 ps-8 pe-8'>Login</button></Link>
-      }
+        {/* <Link className='w-full relative'></Link> */}
+        <Link className=" flex items-center gap-6"
+              onMouseEnter={() => setShowName(true)} // Show name on hover
+              onMouseLeave={() => setShowName(false)} // Hide name on mouse leave
+            >
+              <div className=" w-full relative">
+                {user && (
+                  <img className=" w-12 rounded-full" src={user.photoURL} alt="" />
+                )}
+                {showName && user && ( // Only show name when hovering over picture and user exists
+                  <div className="absolute top-0 left-0 bg-white rounded-md py-1 px-2 shadow-md">
+                    {user.displayName}
+                  </div>
+                )}
+              </div>
+              {user ? (
+                <div>
+                  <Link onClick={handleLogOut} variant="secondary">
+                    Logout
+                  </Link>
+                </div>
+              ) : (
+                <ActiveLink to="/login">
+                  Login
+                </ActiveLink>
+              )}
+            </Link>
+        
       </ul>
     </div>
    <h1 className=' text-4xl/loose italic hover:not-italic font-bold bg-gradient-to-br from-pink-600  to-purple-600 inline-block text-transparent bg-clip-text lg:pt-0 '>TastyFood</h1>
@@ -46,9 +72,33 @@ const handleLogOut =() =>{
       <p className='lg:pe-14 font-semibold text-pink-500'><ActiveLink  to="/blog">Blog</ActiveLink></p>
       <p className='lg:pe-14 font-semibold text-pink-500'><ActiveLink  to="/gallery" >Gallery</ActiveLink></p>
       <p className='font-semibold text-pink-500 me-8'><ActiveLink  to="/contact">Contact Us</ActiveLink></p>
-      {
-        user?<button onClick={handleLogOut} className='btn bg-pink-500 hover:bg-pink-800  border-0 ps-8 pe-8'>Logout</button> :<Link to="/login"><button className='btn bg-purple-600 border-0 hover:bg-purple-800 ps-8 pe-8'>Login</button></Link>
-      }
+      <Link className=" flex items-center gap-6"
+              onMouseEnter={() => setShowName(true)} // Show name on hover
+              onMouseLeave={() => setShowName(false)} // Hide name on mouse leave
+            >
+              <div className=" w-full relative">
+                {user && (
+                  <img className=" w-12 rounded-full" src={user.photoURL} alt="" />
+                )}
+                {showName && user && ( // Only show name when hovering over picture and user exists
+                  <div className="absolute top-0 left-0 bg-white rounded-md py-1 px-2 shadow-md">
+                    {user.displayName}
+                  </div>
+                )}
+              </div>
+              {user ? (
+                <div>
+                  <Link onClick={handleLogOut} variant="secondary">
+                    Logout
+                  </Link>
+                </div>
+              ) : (
+                <ActiveLink to="/login">
+                  Login
+                </ActiveLink>
+              )}
+            </Link>
+      
     </ul>
   </div>
   <div className="navbar-end lg:me-24 ">

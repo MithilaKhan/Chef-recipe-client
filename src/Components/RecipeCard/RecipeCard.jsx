@@ -11,7 +11,7 @@ const RecipeCard = ({recipeCard}) => {
 <p className='text-pink-800  text-xl'> <span className='font-semibold text-purple-600'>Ingredients :</span> {ingredients[0]}</p>
 <p className='text-pink-800  text-xl'> <span className='font-semibold text-purple-600'>Rating :</span> {rating}</p>
     <div className="card-actions justify-center">
-    <button className='btn bg-gradient-to-br from-pink-600  to-purple-600 border-0 ps-8 pe-8'>View Recipes</button>
+    <button onClick={handleFavorite} className='btn bg-gradient-to-br from-pink-600  to-purple-600 border-0 ps-8 pe-8'>Favorite</button>
     </div>
   </div>
 </div>
